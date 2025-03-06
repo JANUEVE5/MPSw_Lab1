@@ -18,6 +18,7 @@ public class ClubDeportivo {
 		}
 		this.nombre = nombre;
 		grupos = new Grupo[n];
+		ngrupos = 0;
 	}
 
 	private int buscar(Grupo g) {
@@ -37,7 +38,7 @@ public class ClubDeportivo {
 			int matriculados = Integer.parseInt(datos[3]);
 			double tarifa = Double.parseDouble(datos[4]);
 			Grupo g = new Grupo(datos[0], datos[1], plazas, matriculados, tarifa);
-			anyadirActividad(g);
+			this.anyadirActividad(g);
 		} catch (NumberFormatException e) {
 			throw new ClubException("ERROR: formato de número incorrecto");
 		}
